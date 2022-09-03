@@ -4,17 +4,17 @@
         <p><h1>顯示影片文案</h1></p><br>
         <form action="get_video_desription/{{video_url}}" method="post">
             {% csrf_token %}
-            <label>網址:</label>
+            <label>YouTube影片網址:</label>
             <input type="text" id="video_url" name="video_url"><br><br>
             <input type="submit" value="送出">
         </form>
 
-        <br>
-        {% with description=description %}
-        <p>{{description}}</p>
-        {% endwith %}
+        <br><br>
 
-
+        <p>影片文案:</p>
+        <span style="white-space: pre-line;background-color:rgba(206, 226, 232, 0.753);">
+            {{description}}
+        </span>
         
     </body>
 </html>
