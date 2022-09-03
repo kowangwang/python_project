@@ -2,7 +2,7 @@ import argparse
 from googleapiclient.discovery import build
 from googleapiclient.errors import HttpError
 
-def get_video_description(video_url):
+def get_video_description(video_url:str) -> list:
     DEVELOPER_KEY = '_____'   # 要隱藏
     youtube = build('youtube', 'v3', developerKey=DEVELOPER_KEY)
 
@@ -14,7 +14,9 @@ def get_video_description(video_url):
             id=video_id
         )
         response = request.execute()
-        return response['items'][0]['snippet']['description']
+        description = response['items'][0]['snippet']['description']
+
+        return description
     except:
         return '請確認網址是否正確!'
 
