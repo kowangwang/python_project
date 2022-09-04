@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h1>DO NOT WASTE 不要過期</h1>
+        <br>
+        <table border="1">
+            {% for item in my_items %}
+            <tr>
+                <td>{{item.name}}</td>
+                <td>{{item.expire_date}}</td>
+                <td>{{item.place}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+
+
+    </body>
+</html>
