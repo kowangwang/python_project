@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <h1>編輯物件</h1>
+    <form action="updaterecord/{{ item.id }}" method="post">
+        {% csrf_token %}
+        物件名稱 :<br>
+        <input name="name" value="{{ item.name }}">
+        <br><br>
+        類別 :<br>
+        <input name="category" value="{{ item.category }}">
+        <br><br>
+        到期日(yyyymmdd) :<br>
+        <input name="expire_date" value="{{ expire_date }}">
+        <br><br>
+        幾天前提醒我 :<br>
+        <input name="remind_day" value="{{ item.remind_day }}">
+        <br><br>
+        擺放位置 :<br>
+        <input name="place" value="{{ item.place }}">
+        <br><br>
+        <input type="submit" value="送出">
+    </form>
+</html>
