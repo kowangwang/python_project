@@ -2,16 +2,22 @@
 <html>
     <body>
         <h1>DO NOT WASTE 不要過期</h1>
+        <p>現在時間 : {{today}}</p>
         <br>
         <table border="1">
             {% for item in my_items %}
             <tr>
-                <td>{{item.name}}</td>
+                <td><a href="update/{{ item.id }}">{{ item.name }}</a></td>
                 <td>{{item.expire_date}}</td>
                 <td>{{item.place}}</td>
+                <td>{{item.expire_status}}</td>
+                <td><a href="delete/{{ item.id }}">刪除</a></td>
             </tr>
             {% endfor %}
         </table>
+
+        <br>
+        <p><a href="add/">新增物件</a></p>
 
 
     </body>
